@@ -20,5 +20,9 @@ services:
       - "5672:5672"   # AMQP port
       - "9093:9093"   # Kafka port
     environment:
-      - AZURE_EVENTHUBS_CONNECTION_STRING=Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_Key_Value;EntityPath=ehub-local
+      - BLOB_SERVER=azurite
+      - METADATA_SERVER=azurite
       - ACCEPT_EULA=Y
+      - CONFIG_PATH=/Users/azureuser/emulator/Config.json
+    volumes:
+      - ./Config.json:/Users/azureuser/emulator/Config.json

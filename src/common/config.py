@@ -17,6 +17,7 @@ class Config:
 
     # 로그 설정
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+    LOG_FILE_PATH = os.getenv("LOG_FILE_PATH", "/var/log/system.log")
 
     @classmethod
     def validate(cls):
